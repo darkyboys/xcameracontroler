@@ -1,0 +1,199 @@
+[gd_scene format=3 uid="uid://dlkt015ob0u7d"]
+
+[ext_resource type="Script" uid="uid://bbl6hkih045kf" path="res://addons/XCameraControls/scripts/x_camera_controls_ui.gd" id="1_2wrvx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nrcgx"]
+content_margin_left = 25.0
+bg_color = Color(0.14883909, 0.10602593, 0.056185268, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2wrvx"]
+content_margin_left = 25.0
+bg_color = Color(0.12741426, 0.08803708, 0.04077304, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2wrvx"]
+
+[node name="XCameraControls-UI" type="Node2D" unique_id=965658902]
+script = ExtResource("1_2wrvx")
+
+[node name="background" type="ColorRect" parent="." unique_id=2042114903]
+offset_right = 1161.0
+offset_bottom = 648.0
+color = Color(0.09398157, 0.06189628, 0.029151924, 1)
+
+[node name="Heading" type="Label" parent="." unique_id=1286799960]
+offset_left = 363.0
+offset_top = 31.0
+offset_right = 819.0
+offset_bottom = 100.0
+theme_override_colors/font_color = Color(0.9999998, 0.69326574, 0.19702971, 1)
+theme_override_font_sizes/font_size = 50
+text = "XCameraControls"
+
+[node name="Options" type="Node" parent="." unique_id=258805582]
+
+[node name="Profile" type="Label" parent="Options" unique_id=743939432]
+offset_left = 63.0
+offset_top = 141.0
+offset_right = 158.0
+offset_bottom = 183.0
+theme_override_font_sizes/font_size = 20
+text = "Profile"
+
+[node name="OptionButton" type="OptionButton" parent="Options/Profile" unique_id=150438554]
+layout_mode = 0
+offset_left = 78.0
+offset_top = -3.0
+offset_right = 197.0
+offset_bottom = 33.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_nrcgx")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2wrvx")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2wrvx")
+selected = 0
+item_count = 2
+popup/item_0/text = "Rec. 709"
+popup/item_0/id = 0
+popup/item_1/text = "Log"
+popup/item_1/id = 1
+
+[node name="Log" type="Label" parent="Options" unique_id=593066848]
+offset_left = 63.0
+offset_top = 194.0
+offset_right = 158.0
+offset_bottom = 236.0
+theme_override_font_sizes/font_size = 20
+text = "Log"
+
+[node name="OptionButton" type="OptionButton" parent="Options/Log" unique_id=2069399480]
+layout_mode = 0
+offset_left = 78.0
+offset_top = -3.0
+offset_right = 197.0
+offset_bottom = 33.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_nrcgx")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2wrvx")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2wrvx")
+disabled = true
+selected = 0
+item_count = 6
+popup/item_0/text = "tlogk"
+popup/item_0/id = 0
+popup/item_1/text = "ilog0"
+popup/item_1/id = 1
+popup/item_2/text = "flog0"
+popup/item_2/id = 2
+popup/item_3/text = "glog0"
+popup/item_3/id = 3
+popup/item_4/text = "glog1"
+popup/item_4/id = 4
+popup/item_5/text = "glog2"
+popup/item_5/id = 5
+
+[node name="ToneMapping" type="Label" parent="Options" unique_id=776828347]
+offset_left = 59.0
+offset_top = 244.0
+offset_right = 157.0
+offset_bottom = 286.0
+theme_override_font_sizes/font_size = 20
+text = "Tonemap"
+
+[node name="OptionButton" type="OptionButton" parent="Options/ToneMapping" unique_id=62408946]
+layout_mode = 0
+offset_left = 101.0
+offset_top = -1.0
+offset_right = 220.0
+offset_bottom = 35.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_nrcgx")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2wrvx")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2wrvx")
+selected = 0
+item_count = 5
+popup/item_0/text = "Filmic"
+popup/item_0/id = 0
+popup/item_1/text = "ACES"
+popup/item_1/id = 1
+popup/item_2/text = "Agx"
+popup/item_2/id = 2
+popup/item_3/text = "Linear"
+popup/item_3/id = 3
+popup/item_4/text = "Reinhard"
+popup/item_4/id = 4
+
+[node name="SSR" type="Button" parent="Options" unique_id=431246986]
+offset_left = 61.0
+offset_top = 292.0
+offset_right = 97.0
+offset_bottom = 323.0
+theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
+theme_override_colors/font_pressed_color = Color(1, 0.69411767, 0.19607843, 1)
+theme_override_colors/font_hover_color = Color(1, 0.69411767, 0.19607843, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxEmpty_2wrvx")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_2wrvx")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_2wrvx")
+text = "SSR"
+
+[node name="SDFGI" type="Button" parent="Options" unique_id=86594322]
+offset_left = 121.0
+offset_top = 291.0
+offset_right = 178.0
+offset_bottom = 322.0
+theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
+theme_override_colors/font_pressed_color = Color(1, 0.69411767, 0.19607843, 1)
+theme_override_colors/font_hover_color = Color(1, 0.69411767, 0.19607843, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxEmpty_2wrvx")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_2wrvx")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_2wrvx")
+text = "SDFGI"
+
+[node name="SSIL" type="Button" parent="Options" unique_id=505414499]
+offset_left = 198.0
+offset_top = 291.0
+offset_right = 255.0
+offset_bottom = 322.0
+theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
+theme_override_colors/font_pressed_color = Color(1, 0.69411767, 0.19607843, 1)
+theme_override_colors/font_hover_color = Color(1, 0.69411767, 0.19607843, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxEmpty_2wrvx")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_2wrvx")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_2wrvx")
+text = "SSIL"
+
+[node name="SSAO" type="Button" parent="Options" unique_id=1392735345]
+offset_left = 59.0
+offset_top = 338.0
+offset_right = 116.0
+offset_bottom = 369.0
+theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
+theme_override_colors/font_pressed_color = Color(1, 0.69411767, 0.19607843, 1)
+theme_override_colors/font_hover_color = Color(1, 0.69411767, 0.19607843, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxEmpty_2wrvx")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_2wrvx")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_2wrvx")
+text = "SSAO"
+
+[node name="error" type="Label" parent="." unique_id=326144737]
+offset_left = 63.0
+offset_top = 560.0
+offset_right = 960.0
+offset_bottom = 634.0
+theme_override_colors/font_color = Color(1, 0.16862746, 0, 1)
+theme_override_font_sizes/font_size = 20
+
+[connection signal="item_selected" from="Options/Profile/OptionButton" to="." method="_on_profile_option_button_item_selected"]
+[connection signal="item_selected" from="Options/Log/OptionButton" to="." method="_on_log_option_button_item_selected"]
+[connection signal="item_selected" from="Options/ToneMapping/OptionButton" to="." method="_on_tonemapping_option_button_item_selected"]
+[connection signal="button_down" from="Options/SSR" to="." method="_on_ssr_button_down"]
+[connection signal="button_down" from="Options/SDFGI" to="." method="_on_sdfgi_button_down"]
+[connection signal="button_down" from="Options/SSIL" to="." method="_on_ssil_button_down"]
+[connection signal="button_down" from="Options/SSAO" to="." method="_on_ssao_button_down"]

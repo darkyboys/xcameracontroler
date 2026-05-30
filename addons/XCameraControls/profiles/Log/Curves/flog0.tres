@@ -1,0 +1,9 @@
+[gd_resource type="CurveTexture" format=3 uid="uid://dug5o7hgfpnrq"]
+
+[sub_resource type="Curve" id="Curve_xaslo"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.24028268, 0.23473847), 1.0185493, 1.0185493, 0, 0, Vector2(0.52296823, 0.33866292), 0.4540231, 0.4540231, 0, 0, Vector2(0.8551237, 0.5465117), 2.04983, 2.04983, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 5
+metadata/_snap_count = 100
+
+[resource]
+curve = SubResource("Curve_xaslo")

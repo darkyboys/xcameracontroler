@@ -1,5 +1,5 @@
 # XCameraControler
-![demo](MOTION.gif)
+![demo](effects.gif)
 <img src="effects.gif">
 Is an open source control Panel made for godot 4 game engine in order to provide the game developers quick yet powerful GUI To implement in their own games.
 

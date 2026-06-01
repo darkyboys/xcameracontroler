@@ -37,9 +37,12 @@ theme_override_colors/font_color = Color(0.9999998, 0.69326574, 0.19702971, 1)
 theme_override_font_sizes/font_size = 50
 text = "XCameraControls"
 
-[node name="Options" type="Node" parent="." unique_id=258805582]
+[node name="Options" type="Control" parent="." unique_id=983763175]
+layout_mode = 3
+anchors_preset = 0
 
 [node name="Profile" type="Label" parent="Options" unique_id=743939432]
+layout_mode = 0
 offset_left = 63.0
 offset_top = 141.0
 offset_right = 158.0
@@ -64,6 +67,7 @@ popup/item_1/text = "Log"
 popup/item_1/id = 1
 
 [node name="Log" type="Label" parent="Options" unique_id=593066848]
+layout_mode = 0
 offset_left = 63.0
 offset_top = 194.0
 offset_right = 158.0
@@ -97,6 +101,7 @@ popup/item_5/text = "glog2"
 popup/item_5/id = 5
 
 [node name="ToneMapping" type="Label" parent="Options" unique_id=776828347]
+layout_mode = 0
 offset_left = 59.0
 offset_top = 244.0
 offset_right = 157.0
@@ -127,6 +132,7 @@ popup/item_4/text = "Reinhard"
 popup/item_4/id = 4
 
 [node name="SSR" type="Button" parent="Options" unique_id=431246986]
+layout_mode = 0
 offset_left = 61.0
 offset_top = 292.0
 offset_right = 97.0
@@ -141,6 +147,7 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_2wrvx")
 text = "SSR"
 
 [node name="SDFGI" type="Button" parent="Options" unique_id=86594322]
+layout_mode = 0
 offset_left = 121.0
 offset_top = 291.0
 offset_right = 178.0
@@ -155,6 +162,7 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_2wrvx")
 text = "SDFGI"
 
 [node name="SSIL" type="Button" parent="Options" unique_id=505414499]
+layout_mode = 0
 offset_left = 198.0
 offset_top = 291.0
 offset_right = 255.0
@@ -169,6 +177,7 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_2wrvx")
 text = "SSIL"
 
 [node name="SSAO" type="Button" parent="Options" unique_id=1392735345]
+layout_mode = 0
 offset_left = 59.0
 offset_top = 338.0
 offset_right = 116.0

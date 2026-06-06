@@ -60,11 +60,13 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_nrcgx")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_2wrvx")
 theme_override_styles/hover = SubResource("StyleBoxFlat_2wrvx")
 selected = 0
-item_count = 2
+item_count = 3
 popup/item_0/text = "Rec. 709"
 popup/item_0/id = 0
 popup/item_1/text = "Log"
 popup/item_1/id = 1
+popup/item_2/text = "HDR"
+popup/item_2/id = 2
 
 [node name="Log" type="Label" parent="Options" unique_id=593066848]
 layout_mode = 0
@@ -100,12 +102,36 @@ popup/item_4/id = 4
 popup/item_5/text = "glog2"
 popup/item_5/id = 5
 
+[node name="Hdr" type="Label" parent="Options" unique_id=1406854119]
+layout_mode = 0
+offset_left = 62.0
+offset_top = 250.0
+offset_right = 157.0
+offset_bottom = 292.0
+theme_override_font_sizes/font_size = 20
+text = "Hdr"
+
+[node name="OptionButton" type="OptionButton" parent="Options/Hdr" unique_id=1611805361]
+layout_mode = 0
+offset_left = 78.0
+offset_top = -3.0
+offset_right = 197.0
+offset_bottom = 33.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_nrcgx")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2wrvx")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2wrvx")
+disabled = true
+selected = 0
+item_count = 1
+popup/item_0/text = "ghdr1"
+popup/item_0/id = 0
+
 [node name="ToneMapping" type="Label" parent="Options" unique_id=776828347]
 layout_mode = 0
-offset_left = 59.0
-offset_top = 244.0
-offset_right = 157.0
-offset_bottom = 286.0
+offset_left = 62.0
+offset_top = 307.0
+offset_right = 160.0
+offset_bottom = 349.0
 theme_override_font_sizes/font_size = 20
 text = "Tonemap"
 
@@ -133,10 +159,10 @@ popup/item_4/id = 4
 
 [node name="SSR" type="Button" parent="Options" unique_id=431246986]
 layout_mode = 0
-offset_left = 61.0
-offset_top = 292.0
-offset_right = 97.0
-offset_bottom = 323.0
+offset_left = 64.0
+offset_top = 355.0
+offset_right = 100.0
+offset_bottom = 386.0
 theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
 theme_override_colors/font_pressed_color = Color(1, 0.69411767, 0.19607843, 1)
 theme_override_colors/font_hover_color = Color(1, 0.69411767, 0.19607843, 1)
@@ -148,10 +174,10 @@ text = "SSR"
 
 [node name="SDFGI" type="Button" parent="Options" unique_id=86594322]
 layout_mode = 0
-offset_left = 121.0
-offset_top = 291.0
-offset_right = 178.0
-offset_bottom = 322.0
+offset_left = 124.0
+offset_top = 354.0
+offset_right = 181.0
+offset_bottom = 385.0
 theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
 theme_override_colors/font_pressed_color = Color(1, 0.69411767, 0.19607843, 1)
 theme_override_colors/font_hover_color = Color(1, 0.69411767, 0.19607843, 1)
@@ -163,10 +189,10 @@ text = "SDFGI"
 
 [node name="SSIL" type="Button" parent="Options" unique_id=505414499]
 layout_mode = 0
-offset_left = 198.0
-offset_top = 291.0
-offset_right = 255.0
-offset_bottom = 322.0
+offset_left = 201.0
+offset_top = 354.0
+offset_right = 258.0
+offset_bottom = 385.0
 theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
 theme_override_colors/font_pressed_color = Color(1, 0.69411767, 0.19607843, 1)
 theme_override_colors/font_hover_color = Color(1, 0.69411767, 0.19607843, 1)
@@ -178,10 +204,10 @@ text = "SSIL"
 
 [node name="SSAO" type="Button" parent="Options" unique_id=1392735345]
 layout_mode = 0
-offset_left = 59.0
-offset_top = 338.0
-offset_right = 116.0
-offset_bottom = 369.0
+offset_left = 62.0
+offset_top = 401.0
+offset_right = 119.0
+offset_bottom = 432.0
 theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
 theme_override_colors/font_pressed_color = Color(1, 0.69411767, 0.19607843, 1)
 theme_override_colors/font_hover_color = Color(1, 0.69411767, 0.19607843, 1)
@@ -201,6 +227,7 @@ theme_override_font_sizes/font_size = 20
 
 [connection signal="item_selected" from="Options/Profile/OptionButton" to="." method="_on_profile_option_button_item_selected"]
 [connection signal="item_selected" from="Options/Log/OptionButton" to="." method="_on_log_option_button_item_selected"]
+[connection signal="item_selected" from="Options/Hdr/OptionButton" to="." method="_on_hdr_option_button_item_selected"]
 [connection signal="item_selected" from="Options/ToneMapping/OptionButton" to="." method="_on_tonemapping_option_button_item_selected"]
 [connection signal="button_down" from="Options/SSR" to="." method="_on_ssr_button_down"]
 [connection signal="button_down" from="Options/SDFGI" to="." method="_on_sdfgi_button_down"]

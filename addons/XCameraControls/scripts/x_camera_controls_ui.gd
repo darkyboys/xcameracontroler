@@ -16,13 +16,21 @@ func _on_profile_option_button_item_selected(index: int) -> void:
 	if profile_option.text == "Rec. 709":
 		var e = environment.environment
 		e.adjustment_enabled = false
+		$Options/Hdr/OptionButton.disabled = true
 		$Options/Log/OptionButton.disabled = true
-	else:
+	elif profile_option.text == "Log":
 		var e = environment.environment
 		e.adjustment_enabled = true
 		$Options/Log/OptionButton.disabled = false
+		$Options/Hdr/OptionButton.disabled = true
 		#$Options/Log/OptionButton.emit_signal("item_selected")
 		_on_log_option_button_item_selected(0)
+	else:
+		var e = environment.environment
+		e.adjustment_enabled = true
+		$Options/Hdr/OptionButton.disabled = false
+		$Options/Log/OptionButton.disabled = true
+		_on_hdr_option_button_item_selected(0)
 
 
 func _on_log_option_button_item_selected(index: int) -> void:
@@ -71,3 +79,16 @@ func _on_ssil_button_down() -> void:
 func _on_ssao_button_down() -> void:
 	var e = environment.environment
 	e.ssao_enabled = not(e.ssao_enabled)
+
+
+func _on_hdr_option_button_item_selected(index: int) -> void:
+	var option = $Options/Hdr/OptionButton
+	var file_path = "res://addons/XCameraControls/profiles/Hdr/Curves/" + option.text +  ".tres"
+	if FileAccess.file_exists(file_path):
+		var e = environment.environment
+		e.adjustment_enabled = true
+		e.adjustment_color_correction = ResourceLoader.load(file_path)
+		#print(e.adjustment_color_correction, " TYPE: ", e.adjustment_color_correction.get_class())
+		$error.text = "";
+	else:
+		$error.text = "Error: the hdr curves file could not be loaded. Please make sure that the curve file exists or \nreport this issue to the developer.";

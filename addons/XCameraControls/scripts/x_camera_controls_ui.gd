@@ -6,7 +6,7 @@ extends Node2D
 func _ready() -> void:
 	pass
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 	
 
@@ -18,19 +18,29 @@ func _on_profile_option_button_item_selected(index: int) -> void:
 		e.adjustment_enabled = false
 		$Options/Hdr/OptionButton.disabled = true
 		$Options/Log/OptionButton.disabled = true
+		$Options/Cinema/OptionButton.disabled = true
 	elif profile_option.text == "Log":
 		var e = environment.environment
 		e.adjustment_enabled = true
 		$Options/Log/OptionButton.disabled = false
 		$Options/Hdr/OptionButton.disabled = true
+		$Options/Cinema/OptionButton.disabled = true
 		#$Options/Log/OptionButton.emit_signal("item_selected")
 		_on_log_option_button_item_selected(0)
-	else:
+	elif profile_option.text == "HDR":
 		var e = environment.environment
 		e.adjustment_enabled = true
 		$Options/Hdr/OptionButton.disabled = false
 		$Options/Log/OptionButton.disabled = true
+		$Options/Cinema/OptionButton.disabled = true
 		_on_hdr_option_button_item_selected(0)
+	else:
+		var e = environment.environment
+		e.adjustment_enabled = true
+		$Options/Hdr/OptionButton.disabled = true
+		$Options/Log/OptionButton.disabled = true
+		$Options/Cinema/OptionButton.disabled = false
+		_on_cinema_option_button_item_selected(0)
 
 
 func _on_log_option_button_item_selected(index: int) -> void:
@@ -92,3 +102,16 @@ func _on_hdr_option_button_item_selected(index: int) -> void:
 		$error.text = "";
 	else:
 		$error.text = "Error: the hdr curves file could not be loaded. Please make sure that the curve file exists or \nreport this issue to the developer.";
+
+
+func _on_cinema_option_button_item_selected(index: int) -> void:
+	var option = $Options/Cinema/OptionButton
+	var file_path = "res://addons/XCameraControls/assets/luts/" + option.text +  ".png"
+	if FileAccess.file_exists(file_path):
+		var e = environment.environment
+		e.adjustment_enabled = true
+		e.adjustment_color_correction = ResourceLoader.load(file_path)
+		#print(e.adjustment_color_correction, " TYPE: ", e.adjustment_color_correction.get_class())
+		$error.text = "";
+	else:
+		$error.text = "Error: the cinema tables could not be loaded. Please make sure that the curve file exists or \nreport this issue to the developer.";

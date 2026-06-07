@@ -55,9 +55,13 @@ There may be multiple `HDR` tonemappings. The best one or the mapping i recommen
 
 > Note: HDR may make dark scenes look brighter and that's expected and shouldn't be reported as a bug to the `XCameraControler` project
 
+## What is Cinema ?
+`Cinema` in `XCameraControler` refers to the Look Up Tables (LUTs) which comes with the project `XCameraControler` made by me (darkyboys) in order to to give players the cinema feel without having to color grade themselves. They were mainly implemented for players to play the game with cinematic aesthetics because LOG exists but it is only usable for video editors who want to color grade to footage. HDR Also exists which gives better visual dynamic range but the problem is still the colors. HDR gives you incredible details sure but the problem is that the colors that you get after color grading are different from HDR and in order to give that color grading look the project introduced these LUTs. Which transforms the game's Aesthetics into pre graded output. These LUTs also follows the CC0 License as they are the part of the project.
+
 ## Differences between the LOG, Rec. 709 and HDR
 <img src="img/hdr_vs_rec709.jpg">
 <img src="img/log_vs_hdr_vs_rec709.jpg">
+<img src="img/cinema_vs_rec709.jpg">
 
 ## Some Screen Shots
 <img src="img/1.png">
